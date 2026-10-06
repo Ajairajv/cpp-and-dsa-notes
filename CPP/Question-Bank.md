@@ -1,4 +1,4 @@
-# C++ — Question Bank (Unit 1 & Unit 2)
+# C++ — Question Bank (Unit 1, Unit 2 & Unit 3)
 
 Basic to advanced questions for practice. Theory questions need short written answers.
 Coding questions must be **typed and run** in a compiler, not just read.
@@ -341,6 +341,157 @@ Coding questions have no fixed answer — check your output against what the que
 
 ---
 
+## Unit 3
+
+### 21. Opening and closing files, modes of file
+
+**Basic**
+1. Which header file is needed for file handling? Name the three file stream classes it gives.
+2. What are the two ways to open a file?
+3. Why should a file be closed with `close()`?
+
+**Intermediate**
+4. Write a program that opens a file `test.txt` for reading and prints "File not found" if it
+   could not be opened.
+5. What is the difference between `ios::out` and `ios::app`? What happens to old data in each?
+
+**Advanced**
+6. Write a program that writes 2 lines to `log.txt` using `ios::out`, then opens it again in
+   `ios::app` mode, adds 1 more line, and finally reads and prints all 3 lines.
+
+### 22. File stream functions, reading and writing files
+
+**Basic**
+1. What is the difference between reading with `fin >> s` and `getline(fin, s)`?
+2. What do `get()` and `put()` do?
+3. What does `eof()` return?
+
+**Intermediate**
+4. Write a program that writes 5 numbers to a file, then reads them back and prints their sum.
+5. Write a program that counts the number of characters in a file using `get()`.
+
+**Advanced**
+6. Write a program that copies the contents of one text file into another file, line by line.
+
+### 23. Sequential access and random access
+
+**Basic**
+1. What is the difference between sequential access and random access?
+2. What do `seekg()`, `seekp()`, `tellg()` and `tellp()` do?
+3. What do `ios::beg`, `ios::cur` and `ios::end` mean?
+
+**Intermediate**
+4. Write a program that finds the size of a file using `seekg()` and `tellg()`.
+5. A file has `ABCDEFGHIJ`. Which character is read after `seekg(-2, ios::end)`?
+
+**Advanced**
+6. Write a program that opens a file with `fstream` in `ios::in | ios::out` mode, replaces the
+   5th character with `'*'` using `seekp()`, and prints the whole file again.
+
+### 24. Binary file operations
+
+**Basic**
+1. What is a binary file? How is it different from a text file?
+2. Which mode is used to open a file in binary form?
+3. Write the general syntax of `write()` and `read()`.
+
+**Intermediate**
+4. Why is the address typecast to `(char*)` in `write()` and `read()`?
+5. Write a program that writes an array of 5 `int`s to a binary file and reads them back.
+
+**Advanced**
+6. Write a program that writes 10 numbers to a binary file and then reads **only the 7th number**
+   using `seekg()`, without reading the first 6.
+
+### 25. Classes, structures and file operations
+
+**Basic**
+1. How do you write one whole structure variable to a binary file in one statement?
+2. Why should text inside a record be stored as a `char` array and not a `string`?
+
+**Intermediate**
+3. Write a `struct Student` (roll, name, marks). Write 3 records to a binary file and read them all
+   back using a `while (fin.read(...))` loop.
+4. How can you find the number of records in a binary file?
+
+**Advanced**
+5. Write a class `Account` (account number, name, balance) with functions to write objects to a
+   file and to search an account by its number from the file and print its details.
+
+### 26. Manager functions, default constructor, constructor with default arguments
+
+**Basic**
+1. What are manager functions? Name them.
+2. What is a constructor? Write any three of its features.
+3. What is a default constructor? When does the compiler create one by itself?
+
+**Intermediate**
+4. Write a class `Box` with a constructor with default arguments `Box(int l = 1, int w = 1)`.
+   Create objects with 0, 1 and 2 values.
+5. Why do `A()` and `A(int x = 0)` together in one class cause an error for `A obj;`?
+
+**Advanced**
+6. Write a class `Time` with a constructor that has default arguments for hours, minutes and
+   seconds (all 0). Create 3 objects using different numbers of values and print each time.
+
+### 27. Parameterized constructor
+
+**Basic**
+1. What is a parameterized constructor?
+2. Write the implicit and explicit ways of calling a parameterized constructor.
+
+**Intermediate**
+3. Write a class `Rectangle` with a parameterized constructor and a function `area()`.
+4. If a class has only a parameterized constructor, why does `Rectangle r;` give an error?
+
+**Advanced**
+5. Write a class `Complex` with overloaded constructors (no arguments, one argument, two
+   arguments) and a function to add two `Complex` objects.
+
+### 28. Copy constructor
+
+**Basic**
+1. What is a copy constructor? Write its general syntax.
+2. Write any three situations in which the copy constructor is called.
+
+**Intermediate**
+3. Why must the parameter of a copy constructor be a reference?
+4. What is the difference between a shallow copy and a deep copy?
+
+**Advanced**
+5. Write a class with an `int*` data member and a copy constructor that does a **deep copy**.
+   Show that changing the copy does not change the original object.
+
+### 29. Destructors
+
+**Basic**
+1. What is a destructor? How is it named?
+2. Can a destructor take arguments? Can it be overloaded?
+
+**Intermediate**
+3. Write a program to show that objects are destroyed in the reverse order of their creation.
+4. When is the destructor of an object created with `new` called?
+
+**Advanced**
+5. Write a class `FileLogger` that opens a file in its constructor, has a function to write a
+   message, and closes the file in its destructor.
+
+### 30. Initializer lists
+
+**Basic**
+1. What is an initializer list? Write its syntax.
+2. Which data members must be initialized using an initializer list?
+
+**Intermediate**
+3. Write a class `Point` that uses an initializer list to set `x` and `y`.
+4. In which order are members initialized — the order in the list or the order of declaration?
+
+**Advanced**
+5. Write a class `Student` with a `const int roll` and a reference member `int &marks`, and
+   initialize both using an initializer list.
+
+---
+
 # Answers
 
 ## Unit 1
@@ -420,3 +571,54 @@ Coding questions have no fixed answer — check your output against what the que
     Declared as `Type ClassName::*ptr = &ClassName::member;`. It needs the class name because the
     same member exists at a different address in every object; the pointer only tells you *which*
     member, an object tells you *whose*.
+
+## Unit 3
+
+21. Header `<fstream>`. Classes: `ofstream` (write), `ifstream` (read), `fstream` (both). Two ways
+    to open: using the constructor `ofstream f("a.txt");` or using `f.open("a.txt");`. `close()`
+    saves all data to the disk and frees the file. Check opening with `if (!f)` or
+    `f.is_open()`. `ios::out` erases old data and writes from the start; `ios::app` keeps old data
+    and always writes at the end.
+22. `fin >> s` reads only one word (stops at a space/new line); `getline(fin, s)` reads a full line
+    with spaces. `get(ch)` reads one character (spaces too), `put(ch)` writes one character.
+    `eof()` returns true (1) when the end of the file has been reached. Safe reading loop:
+    `while (getline(fin, line))` or `while (fin.get(ch))`.
+23. Sequential access reads the file in order from start to end; random access jumps directly to
+    any position. `seekg()`/`seekp()` move the get (read) / put (write) pointer; `tellg()`/`tellp()`
+    tell their current position. `ios::beg` = from the beginning, `ios::cur` = from the current
+    position, `ios::end` = from the end. File size: `seekg(0, ios::end);` then `tellg()`. For
+    `ABCDEFGHIJ`, `seekg(-2, ios::end)` reads `I`.
+24. A binary file stores data as raw bytes exactly as in memory (a text file stores readable
+    characters). Open with `ios::binary`. Syntax: `fout.write((char*)&x, sizeof(x));` and
+    `fin.read((char*)&x, sizeof(x));`. The `(char*)` cast is needed because these functions work
+    on bytes and take a `char*`. Item `n` (from 0) is at byte `n * sizeof(item)`, so
+    `seekg(6 * sizeof(int))` jumps to the 7th `int`.
+25. Whole struct/object: `fout.write((char*)&s, sizeof(s));`. Use a `char` array for text, because
+    a `string` stores only a pointer to its letters, so its raw bytes do not contain the actual
+    text. Read all records with `while (fin.read((char*)&s, sizeof(s)))`. Number of records =
+    file size ÷ `sizeof(record)`.
+26. Manager functions = functions that manage an object's life: constructors (default,
+    parameterized, copy) and the destructor. Constructor: same name as the class, no return type,
+    called automatically when an object is created, can be overloaded. Default constructor = one
+    that can be called with no arguments; the compiler makes one only if the class has **no**
+    constructor at all. `A()` and `A(int x = 0)` together make `A obj;` **ambiguous** (both can be
+    called with no value), so it is a compile error.
+27. Parameterized constructor = a constructor that takes arguments, so each object can start with
+    different values. Implicit call: `Rectangle r(4, 5);` Explicit call:
+    `Rectangle r = Rectangle(4, 5);`. If only a parameterized constructor is written, the compiler
+    does not make a default constructor, so `Rectangle r;` has no matching constructor → error.
+28. Copy constructor creates a new object as a copy of an existing one:
+    `ClassName(const ClassName &obj)`. Called when: `B b(a);`, `B c = a;`, passing an object by value, returning an
+    object by value. The parameter must be a reference, otherwise passing it by value would call
+    the copy constructor again and again (infinite recursion). Shallow copy copies pointer
+    addresses (both objects share the same memory); deep copy gives the copy its own new memory
+    with the same value.
+29. Destructor: special member function `~ClassName()`, called automatically when an object is
+    destroyed, used for clean-up (free memory, close files). It takes no arguments, has no return
+    type, and cannot be overloaded (only one per class). Local objects are destroyed in the
+    reverse order of creation. For an object made with `new`, the destructor runs only when
+    `delete` is used.
+30. Initializer list: written after `:` in a constructor, e.g. `Point(int a, int b) : x(a), y(b) { }`.
+    Must be used for `const` members, reference members, and member objects with no default
+    constructor. Members are always initialized in the order they are **declared in the class**,
+    not the order written in the list.

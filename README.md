@@ -10,10 +10,17 @@ Everything is written in **C++**.
 
 | Subject | Notes |
 |---|---|
-| **C++** | [Unit 1 — All topics](CPP/Unit-1.md) |
-| **DSA** | [Unit 1 — All topics](DSA/Unit-1.md) |
+| **C++** | [Unit 1](CPP/Unit-1.md) · [Unit 2](CPP/Unit-2.md) · [Unit 3](CPP/Unit-3.md) |
+| **DSA** | [Unit 1](DSA/Unit-1.md) · [Unit 2](DSA/Unit-2.md) · [Unit 3](DSA/Unit-3.md) |
 
 All the topics of a unit are in **one single file**. Just open the link and scroll.
+
+## Practice
+
+| Subject | Question Bank | MCQs |
+|---|---|---|
+| **C++** | [Question Bank](CPP/Question-Bank.md) | [Unit 1](MCQ/Unit-1/CPP.md) · [Unit 2](MCQ/Unit-2/CPP.md) · [Unit 3](MCQ/Unit-3/CPP.md) |
+| **DSA** | [Question Bank](DSA/Question-Bank.md) | [Unit 1](MCQ/Unit-1/DSA.md) · [Unit 2](MCQ/Unit-2/DSA.md) · [Unit 3](MCQ/Unit-3/DSA.md) |
 
 ---
 
@@ -55,6 +62,52 @@ All the **answers** are given at the bottom of the same file.
 7. Searching: linear search and binary search
 8. Sorting: bubble, insertion and selection
 9. Merging two arrays
+
+## C++ Unit 2 topics
+
+13. Pointers: void pointer and pointer arithmetic
+14. Pointer to pointer, dangling, wild and null pointer
+15. Classes containing pointers, pointer to objects, this pointer
+16. Array of objects and multidimensional arrays
+17. The Standard C++ string class
+18. More member functions and modifiers of string class
+19. Difference between pointer and reference variables
+20. Pointer to a data member
+
+## DSA Unit 2 topics
+
+10. Linked lists: introduction and memory representation
+11. Allocation and traversal
+12. Insertion in a linked list
+13. Deletion in a linked list
+14. Header linked lists: grounded and circular
+15. Two-way (doubly) linked lists
+
+## C++ Unit 3 topics
+
+21. Opening and closing files, modes of file
+22. File stream functions, reading and writing files
+23. Sequential access and random access
+24. Binary file operations
+25. Classes, structures and file operations
+26. Manager functions, default constructor, constructor with default arguments
+27. Parameterized constructor
+28. Copy constructor
+29. Destructors
+30. Initializer lists
+
+## DSA Unit 3 topics
+
+16. Stack: introduction and array representation
+17. Stack: linked list representation
+18. Arithmetic expressions and Polish notation
+19. Evaluation of postfix and prefix expressions
+20. Transformation: infix to postfix and infix to prefix
+21. Queue: introduction and array representation
+22. Circular queue
+23. Queue: linked list representation
+24. Priority queues
+25. Deques
 
 ---
 

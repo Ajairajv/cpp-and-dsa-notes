@@ -1,4 +1,4 @@
-# DSA — Question Bank (Unit 1 & Unit 2)
+# DSA — Question Bank (Unit 1, Unit 2 & Unit 3)
 
 Basic to advanced questions for practice. All coding here is in **C++**, same as class.
 (Note: in the DSA MCQ exam, code snippets are given in **C** — practice that separately in the
@@ -260,6 +260,153 @@ Coding questions have no fixed answer — check your output against what the que
 
 ---
 
+## Unit 3
+
+### 16. Stack — introduction and array representation
+
+**Basic**
+1. What is a stack? What does LIFO mean?
+2. What do `push`, `pop` and `peek` do?
+3. What is stack overflow? What is stack underflow?
+
+**Intermediate**
+4. In an array stack where `top` starts at `-1`, write the condition for (a) stack full,
+   (b) stack empty.
+5. Write a C++ program for a stack using an array, with `push()`, `pop()`, `peek()` and
+   `display()` functions. Show overflow and underflow messages.
+
+**Advanced**
+6. Write a C++ program that uses a stack to reverse a string entered by the user.
+
+### 17. Stack — linked list representation
+
+**Basic**
+1. In a linked list stack, which node is the `top`?
+2. Can a linked list stack overflow like an array stack? Explain.
+
+**Intermediate**
+3. Write a C++ program for a stack using a linked list, with `push()`, `pop()` and `display()`.
+
+**Advanced**
+4. Write a C++ program that uses a stack to check whether the brackets in an expression are
+   balanced, e.g. `(A+B)*(C-D)` is balanced but `((A+B)` is not.
+
+### 18. Arithmetic expressions and Polish notation
+
+**Basic**
+1. What are infix, prefix and postfix notations? Give one example of each.
+2. What is Polish notation? What is Reverse Polish notation?
+3. Write the precedence of `^`, `*`, `/`, `+`, `-`. Which of them is right-to-left?
+
+**Intermediate**
+4. Why do computers prefer postfix (or prefix) expressions over infix expressions?
+5. Convert by hand to postfix and prefix: (a) `A * (B + C)` (b) `A + B - C * D`.
+
+**Advanced**
+6. Convert by hand to postfix and prefix: `(A + B) * (C - D) / E ^ F`.
+
+### 19. Evaluation of postfix and prefix expressions
+
+**Basic**
+1. Which data structure is used to evaluate a postfix expression?
+2. In postfix evaluation, when an operator comes, we pop two items. Which popped item is the
+   **left** operand?
+
+**Intermediate**
+3. Evaluate the postfix expression `4 5 + 7 2 - *` step by step, showing the stack.
+4. Evaluate the prefix expression `+ * 2 3 / 8 4` step by step, showing the stack.
+
+**Advanced**
+5. Write a C++ program to evaluate a postfix expression of single-digit numbers using a stack.
+
+### 20. Transformation: infix to postfix and prefix
+
+**Basic**
+1. In infix-to-postfix conversion, what do we do when we see (a) an operand, (b) `(`, (c) `)`?
+
+**Intermediate**
+2. Convert `A * (B + C) - D / E` to postfix using a stack. Show the stack and output after
+   each symbol.
+3. Write the steps to convert an infix expression to prefix using the "reverse" method.
+
+**Advanced**
+4. Write a C++ program to convert an infix expression to postfix using a stack (handle `(`, `)`,
+   and the operators `+ - * / ^`).
+
+### 21. Queue — introduction and array representation
+
+**Basic**
+1. What is a queue? What does FIFO mean?
+2. What are `front` and `rear` in a queue? At which end do we insert, and at which end do we
+   delete?
+
+**Intermediate**
+3. Give two differences between a stack and a queue.
+4. Write a C++ program for a queue using an array, with `enqueue()`, `dequeue()` and `display()`.
+
+**Advanced**
+5. Explain, with a small diagram, why a simple (linear) array queue can say "full" even when
+   there are free boxes in the array.
+
+### 22. Circular queue
+
+**Basic**
+1. What is a circular queue? Why do we need it?
+2. Write the formula used to move `rear` forward in a circular queue.
+
+**Intermediate**
+3. Write the conditions for a circular queue to be (a) full, (b) empty.
+4. A circular queue has `MAX = 6`, `front = 4` and `rear = 1`. How many items does it hold?
+
+**Advanced**
+5. Write a C++ program for a circular queue using an array, with `enqueue()`, `dequeue()` and
+   `display()`.
+
+### 23. Queue — linked list representation
+
+**Basic**
+1. In a linked list queue, which pointer is used for insertion and which for deletion?
+2. Why do we keep a separate `rear` pointer in a linked list queue?
+
+**Intermediate**
+3. Write a C++ program for a queue using a linked list, with `enqueue()`, `dequeue()` and
+   `display()`.
+
+**Advanced**
+4. In `dequeue()`, when the last node is deleted, what must happen to `rear`? What bug appears if
+   we forget it?
+
+### 24. Priority queues
+
+**Basic**
+1. What is a priority queue? Give one real-life example.
+2. In a priority queue, if two items have the same priority, which one is deleted first?
+
+**Intermediate**
+3. Name two ways to represent a priority queue in memory.
+4. Items `X(3), Y(1), Z(2), W(1)` are inserted (smaller number = higher priority). Write the order
+   in which they are deleted.
+
+**Advanced**
+5. Write a C++ program for a priority queue using a linked list that is kept sorted by priority.
+
+### 25. Deques
+
+**Basic**
+1. What is a deque? Name its four operations.
+2. What is an input-restricted deque? What is an output-restricted deque?
+
+**Intermediate**
+3. In a circular array deque, write the formula to move `front` one step back in `insertFront()`.
+   Why do we add `MAX` before taking `%`?
+
+**Advanced**
+4. Write a C++ program for a deque using a circular array, with `insertFront()`, `insertRear()`,
+   `deleteFront()`, `deleteRear()` and `display()`.
+5. Explain how a deque can be used as a stack and also as a queue.
+
+---
+
 # Answers
 
 ## Unit 1
@@ -354,3 +501,75 @@ Coding questions have no fixed answer — check your output against what the que
     Advantage of doubly linked list: easy backward traversal and easier deletion of a node when you
     already have a pointer to it. Disadvantage: extra memory is used for the additional `prev`
     pointer in every node.
+
+## Unit 3
+
+28. Stack = a linear data structure where items are added and removed from **one end only**,
+    called the **top**. LIFO = Last In, First Out (the last item pushed is the first one popped,
+    like a pile of plates). `push` adds an item on the top, `pop` removes the top item, and `peek`
+    only reads the top item without removing it. Overflow = trying to push into a **full** stack.
+    Underflow = trying to pop from an **empty** stack.
+29. With `top` starting at `-1`: (a) stack full → `top == MAX - 1`; (b) stack empty →
+    `top == -1`. To reverse a string, push every character, then pop them all — the last
+    character comes out first, so the string is reversed.
+30. In a linked list stack, the **first node** is the `top` (push = insert at beginning, pop =
+    delete first node, both fast). It does **not** overflow like an array stack, because there is
+    no fixed size — a new node is created with `new` for every push. It can fail only if the
+    computer's whole memory runs out. Bracket checking: push every `(`, and for every `)` pop one
+    `(`; the brackets are balanced only if we never pop from an empty stack and the stack is empty
+    at the end.
+31. Infix = operator **between** operands (`A+B`). Prefix = operator **before** operands (`+AB`).
+    Postfix = operator **after** operands (`AB+`). Prefix is called **Polish notation**, and
+    postfix is called **Reverse Polish notation**. Precedence: `^` (highest), then `*` `/`, then
+    `+` `-` (lowest). `^` is **right to left**; the others are left to right.
+32. Computers prefer postfix/prefix because they need **no brackets** and **no precedence rules**
+    — the order of symbols already shows what to do first, so they can be evaluated in one scan
+    using a stack. Conversions: (a) `A*(B+C)` → postfix `ABC+*`, prefix `*A+BC`.
+    (b) `A+B-C*D` → postfix `AB+CD*-`, prefix `-+AB*CD`.
+33. `(A+B)*(C-D)/E^F` → postfix `AB+CD-*EF^/`, prefix `/*+AB-CD^EF`. (`^` is done first, then `*`
+    and `/` from left to right.)
+34. A **stack** is used to evaluate postfix. When an operator comes, the **first** popped item is
+    the **right** operand and the **second** popped item is the **left** operand.
+    `4 5 + 7 2 - *`: push 4, push 5, `+` → 9; push 7, push 2, `-` → 5 (stack: 9 5); `*` → 9 × 5 =
+    **45**.
+35. Prefix `+ * 2 3 / 8 4` (scan right to left): push 4, push 8, `/` → 8 / 4 = 2; push 3, push 2,
+    `*` → 2 × 3 = 6 (stack: 2 6); `+` → 6 + 2 = **8**.
+36. Infix to postfix: (a) operand → write it to the output; (b) `(` → push it; (c) `)` → pop
+    operators to the output until `(`, then remove the `(`. `A*(B+C)-D/E`:
+    `A` → out `A`; `*` → stack `*`; `(` → stack `*(`; `B` → out `AB`; `+` → stack `*(+`;
+    `C` → out `ABC`; `)` → out `ABC+`, stack `*`; `-` → pop `*` (higher), out `ABC+*`, stack `-`;
+    `D` → out `ABC+*D`; `/` → stack `-/`; `E` → out `ABC+*DE`; end → pop all.
+    Postfix = **`ABC+*DE/-`**.
+    Infix to prefix (reverse method): (1) reverse the infix and swap `(` with `)`, (2) find the
+    postfix of that, (3) reverse the result.
+37. Queue = a linear data structure where items are inserted at the **rear** and deleted from the
+    **front**. FIFO = First In, First Out (like a ticket line). Differences from a stack: a stack
+    is LIFO, a queue is FIFO; a stack uses one end (`top`), a queue uses two ends (`front` and
+    `rear`).
+38. In a simple (linear) array queue, `rear` only moves forward. After some deletions, `front`
+    moves forward and the boxes before it become free, but once `rear == MAX - 1` the queue says
+    "full" and those free boxes can never be used again. A **circular queue** fixes this.
+39. Circular queue = the last box of the array is joined back to the first box, so `rear` can
+    wrap around and reuse free boxes. Move rear: `rear = (rear + 1) % MAX`. Full:
+    `(rear + 1) % MAX == front`. Empty: `front == -1`. For `MAX = 6`, `front = 4`, `rear = 1`:
+    count = `(1 - 4 + 6) % 6 + 1` = **4** items (indexes 4, 5, 0, 1).
+40. In a linked list queue, insertion uses `rear` (add after the last node) and deletion uses
+    `front` (remove the first node). We keep `rear` so that insertion does not need to walk
+    through the whole list. When the last node is deleted, `rear` must also be set to `NULL`;
+    otherwise it points to a deleted node and the next `enqueue()` writes into freed memory, and
+    `front` stays `NULL`, so the new item is lost.
+41. Priority queue = a queue where each item has a priority, and the item with the **highest
+    priority** is deleted first (e.g. a hospital emergency room, CPU job scheduling). Items with
+    the **same** priority are deleted in the order they came (FIFO). Two representations: a
+    one-way linked list kept sorted by priority, and an array of queues (one queue per priority
+    level). (A heap is also used.) For `X(3), Y(1), Z(2), W(1)` the deletion order is
+    **Y W Z X**.
+42. Deque = double-ended queue: insertion and deletion are allowed at **both** ends. Four
+    operations: `insertFront`, `insertRear`, `deleteFront`, `deleteRear`. Input-restricted deque =
+    insertion at only one end, deletion at both ends. Output-restricted deque = deletion at only
+    one end, insertion at both ends.
+43. In `insertFront()`: `front = (front - 1 + MAX) % MAX`. We add `MAX` so that when `front` is
+    `0`, it goes back to `MAX - 1` instead of becoming `-1` (an invalid index). A deque works as a
+    **stack** if we insert and delete at the **same** end (e.g. `insertRear` + `deleteRear`), and
+    as a **queue** if we insert at one end and delete at the other (e.g. `insertRear` +
+    `deleteFront`).
