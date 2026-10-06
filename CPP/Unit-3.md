@@ -43,7 +43,7 @@ To work with files, include the header **`<fstream>`**. It gives three classes:
 | ------------ | ----------------------------------------------------------------- |
 | `ofstream` | **o**utput file stream — used to **write** to a file |
 | `ifstream` | **i**nput file stream — used to **read** from a file |
-| `fstream`  | used for**both** reading and writing                        |
+| `fstream`  | used for **both** reading and writing                        |
 
 ```
           write (<<)                    read (>>)
@@ -70,12 +70,12 @@ example when you try to read a file that does not exist.
 
 | Mode            | Meaning                                                                          |
 | --------------- | -------------------------------------------------------------------------------- |
-| `ios::in`     | open for**reading** (default for `ifstream`)                             |
-| `ios::out`    | open for**writing** (default for `ofstream`) — old data is erased       |
+| `ios::in`     | open for **reading** (default for `ifstream`)                             |
+| `ios::out`    | open for **writing** (default for `ofstream`) — old data is erased       |
 | `ios::app`    | **append** — all new data is added at the **end**, old data is kept |
-| `ios::ate`    | open and go to the**end** at the start (but you can move anywhere later)   |
+| `ios::ate`    | open the file and jump to the **end** right away (you can still move anywhere later) |
 | `ios::trunc`  | erase all old data if the file already exists                                    |
-| `ios::binary` | open in**binary** mode (raw bytes, not text)                               |
+| `ios::binary` | open in **binary** mode (raw bytes, not text)                               |
 
 Modes can be joined using `|`, for example: `fstream f("a.txt", ios::in | ios::out);`
 
@@ -157,9 +157,9 @@ just like `cin` and `cout` — the only change is that the data goes to / comes 
 | ------------------- | -------------------------------------------------------------------------------- |
 | `fout << x`       | writes`x` to the file (same as `cout <<`)                                    |
 | `fin >> x`        | reads one **word / number** from the file — stops at a space or new line |
-| `getline(fin, s)` | reads one**full line** (with spaces) into string `s`                     |
-| `fout.put(ch)`    | writes**one character**                                                    |
-| `fin.get(ch)`     | reads**one character** (spaces and new lines too)                          |
+| `getline(fin, s)` | reads one **full line** (with spaces) into string `s`                     |
+| `fout.put(ch)`    | writes **one character**                                                    |
+| `fin.get(ch)`     | reads **one character** (spaces and new lines too)                          |
 | `fin.eof()`       | returns`true` (1) when the **end of file** is reached                    |
 
 **Reading till the end of the file** — the safe way is to put the read itself inside the loop:
@@ -258,10 +258,10 @@ Every file stream keeps a **position (pointer)** that says where the next read/w
 
 | Function       | Work                                                   |
 | -------------- | ------------------------------------------------------ |
-| `seekg(pos)` | move the**get** pointer to byte `pos`          |
-| `seekp(pos)` | move the**put** pointer to byte `pos`          |
-| `tellg()`    | tells the current position of the**get** pointer |
-| `tellp()`    | tells the current position of the**put** pointer |
+| `seekg(pos)` | move the **get** pointer to byte `pos`          |
+| `seekp(pos)` | move the **put** pointer to byte `pos`          |
+| `tellg()`    | tells the current position of the **get** pointer |
+| `tellp()`    | tells the current position of the **put** pointer |
 
 (Easy to remember: **g** = **g**et = read, **p** = **p**ut = write.)
 
@@ -269,9 +269,9 @@ Every file stream keeps a **position (pointer)** that says where the next read/w
 
 | Starting point | Meaning                                                 |
 | -------------- | ------------------------------------------------------- |
-| `ios::beg`   | count from the**beginning** of the file (default) |
-| `ios::cur`   | count from the**current** position                |
-| `ios::end`   | count from the**end** of the file                 |
+| `ios::beg`   | count from the **beginning** of the file (default) |
+| `ios::cur`   | count from the **current** position                |
+| `ios::end`   | count from the **end** of the file                 |
 
 ```
 File:      A   B   C   D   E   F   G   H   I   J
@@ -990,7 +990,7 @@ This does the same job as `x = a; y = b;` inside the body — but the members ge
 | Member type                               | Why the initializer list is needed                                                              |
 | ----------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | `const` member                          | A`const` cannot be changed after creation, so `roll = r;` in the body is an **error** |
-| Reference member (`int &`)              | A reference**must** be bound when it is created (topic 19)                                |
+| Reference member (`int &`)              | A reference **must** be bound when it is created (topic 19)                                |
 | Member object with no default constructor | It must be given its arguments at creation time                                                 |
 
 **Order rule:** members are always initialized in the order they are **declared in the class**,
